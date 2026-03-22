@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KHMP — Project Page</title>
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --panel: #ffffff;
+      --text: #172033;
+      --muted: #5e6b85;
+      --line: #e4e9f2;
+      --primary: #274690;
+      --accent: #1f9fb5;
+      --soft: #eef4ff;
+      --shadow: 0 10px 30px rgba(28, 43, 77, 0.08);
+      --radius: 20px;
+      --maxw: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f8fbff 0%, #f6f8fc 100%);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 16px;
+    }
+
+    .container {
+      width: min(var(--maxw), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(247, 249, 252, 0.82);
+      border-bottom: 1px solid rgba(228, 233, 242, 0.85);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 70px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: var(--text);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav a {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 72px 0 42px;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top right, rgba(39, 70, 144, 0.08), transparent 30%), var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 44px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      margin: 18px 0 22px;
+      max-width: 860px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .authors, .affiliations {
+      color: var(--muted);
+      font-size: 15px;
+      margin-top: 10px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(39, 70, 144, 0.12);
+      border-color: #cad6eb;
+    }
+
+    .btn.primary {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    section {
+      padding: 28px 0;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 2.5vw, 38px);
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      max-width: 850px;
+      margin: 0 0 24px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+    }
+
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+      height: 100%;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .teaser-caption, .figure-caption {
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .figure-box {
+      background: linear-gradient(180deg, #fbfdff 0%, #f4f8fe 100%);
+      border: 1px dashed #cbd6ea;
+      border-radius: 18px;
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      color: #6e7b94;
+      font-weight: 600;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .metric {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .metric-value {
+      font-size: 28px;
+      font-weight: 800;
+      margin-top: 6px;
+      color: var(--primary);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .step {
+      position: relative;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+    }
+
+    .step-index {
+      display: inline-flex;
+      width: 28px;
+      height: 28px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .result-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .result-tab {
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--muted);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .result-tab.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .result-pane {
+      display: none;
+    }
+
+    .result-pane.active {
+      display: block;
+      animation: fadeIn 0.25s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    th, td {
+      padding: 14px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      font-size: 14px;
+    }
+
+    th {
+      background: #f7faff;
+      color: var(--text);
+    }
+
+    tr:last-child td { border-bottom: none; }
+    .highlight-row td { font-weight: 800; color: var(--primary); }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .video-card video {
+      width: 100%;
+      border-radius: 16px;
+      background: #000;
+    }
+
+    pre {
+      margin: 0;
+      padding: 20px;
+      border-radius: 18px;
+      background: #0f1728;
+      color: #dbe6ff;
+      overflow-x: auto;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    footer {
+      padding: 40px 0 64px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .two-col, .three-col, .grid-2, .video-grid, .metrics, .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        padding: 28px;
+      }
+
+      .topbar-inner {
+        align-items: flex-start;
+        padding: 14px 0;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">KHMP</div>
+      <nav class="nav">
+        <a href="#abstract">Abstract</a>
+        <a href="#motivation">Motivation</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#analysis">Analysis</a>
+        <a href="#video">Video</a>
+        <a href="#bibtex">BibTeX</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="eyebrow">ECCV 2026 · Project Page Template</div>
+          <h1>KHMP: Frequency-Domain Kalman Refinement for High-Fidelity Human Motion Prediction</h1>
+          <p class="subtitle">
+            A clean academic project page template tailored for your paper. Replace the placeholder figures, video demos,
+            and links with your final assets to publish a polished website.
+          </p>
+          <div class="authors">
+            Wenhan Wu, Ce Zheng, Zihao Yang, Chen Chen, Srijan Das, Aidong Lu
+          </div>
+          <div class="affiliations">
+            University of North Carolina at Charlotte · Carnegie Mellon University · Microsoft · University of Central Florida
+          </div>
+          <div class="button-row">
+            <a class="btn primary" href="#">Paper</a>
+            <a class="btn" href="#">arXiv</a>
+            <a class="btn" href="#">Code</a>
+            <a class="btn" href="#">Supplementary</a>
+            <a class="btn" href="#video">Video</a>
+            <a class="btn" href="#bibtex">BibTeX</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="teaser">
+      <div class="container">
+        <h2 class="section-title">Teaser</h2>
+        <p class="section-desc">
+          Use one strong overview figure here: baseline prediction, KHMP refinement, trajectory comparison, and a brief message
+          about reduced jitter and improved motion fidelity.
+        </p>
+        <div class="panel">
+          <div class="figure-box">
+            Replace with teaser figure<br/>
+            Suggested file: assets/teaser_khmp.png
+          </div>
+          <div class="teaser-caption">
+            KHMP integrates training-time physical constraints and adaptive frequency-domain Kalman refinement during inference
+            to produce smoother, more plausible, and more faithful future motion sequences.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="abstract">
+      <div class="container">
+        <div class="two-col">
+          <div class="panel">
+            <h2 class="section-title">Abstract</h2>
+            <p class="muted">
+              Stochastic human motion prediction must model both uncertainty and temporal realism, yet existing methods often
+              suffer from high-frequency jitter and biomechanically implausible motion artifacts. KHMP addresses these issues
+              through a dual strategy: structured physical constraints during training and adaptive Kalman refinement in the DCT
+              frequency domain during inference. The result is improved motion fidelity, smoother trajectories, and strong
+              quantitative performance on HumanEva-I and Human3.6M.
+            </p>
+            <div class="tags">
+              <span class="tag">Human Motion Prediction</span>
+              <span class="tag">Frequency-Domain Refinement</span>
+              <span class="tag">Adaptive Kalman Filtering</span>
+              <span class="tag">Physics-Informed Learning</span>
+            </div>
+          </div>
+          <div class="panel">
+            <h2 class="section-title">Highlights</h2>
+            <div class="metrics">
+              <div class="metric">
+                <div class="metric-label">ADE</div>
+                <div class="metric-value">0.188</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">FDE</div>
+                <div class="metric-value">0.204</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">MMADE</div>
+                <div class="metric-value">0.301</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">MMFDE</div>
+                <div class="metric-value">0.291</div>
+              </div>
+            </div>
+            <p class="figure-caption">
+              You can replace these numbers or expand this block with dataset-specific cards, APD, or jitter reduction summary.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="motivation">
+      <div class="container">
+        <h2 class="section-title">Why KHMP?</h2>
+        <p class="section-desc">
+          This section should communicate the paper’s problem setting in a visual and intuitive way before readers dive into the method.
+        </p>
+        <div class="three-col">
+          <div class="card">
+            <h3>Challenge 1: High-Frequency Jitter</h3>
+            <p class="muted">
+              Existing stochastic predictions can exhibit temporal discontinuities and noisy motion oscillations that degrade realism.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Challenge 2: Physical Implausibility</h3>
+            <p class="muted">
+              Frame-wise objectives alone do not fully enforce biomechanical structure, often leading to implausible poses or bone deformation.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Core Insight</h3>
+            <p class="muted">
+              Treat high-frequency DCT coefficients as a structured sequence and apply adaptive Kalman filtering to suppress noise while preserving motion detail.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="method">
+      <div class="container">
+        <h2 class="section-title">Method Overview</h2>
+        <p class="section-desc">
+          A simple way to present KHMP is to separate the overall framework, the physical constraints, and the adaptive frequency-Kalman refinement.
+        </p>
+
+        <div class="panel" style="margin-bottom: 20px;">
+          <div class="figure-box">
+            Replace with framework figure<br/>
+            Suggested file: assets/framework_khmp.png
+          </div>
+          <div class="figure-caption">
+            Overall KHMP pipeline: variational motion generation, physics-informed training, and adaptive frequency-domain Kalman refinement at inference.
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 20px;">
+          <div class="card">
+            <h3>Physics-Informed Training</h3>
+            <p class="muted">
+              Add training-time structure with temporal smoothness loss and soft joint-angle constraints to encourage anatomically plausible motion.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Adaptive Frequency-Kalman Refinement</h3>
+            <p class="muted">
+              Apply DCT along the temporal axis, preserve low-frequency content, estimate the signal-to-noise ratio from high-frequency energy, and adapt Kalman parameters for denoising.
+            </p>
+          </div>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-index">1</div>
+            <strong>Predict Motion</strong>
+            <p class="muted">Generate future 3D joint trajectories from the backbone model.</p>
+          </div>
+          <div class="step">
+            <div class="step-index">2</div>
+            <strong>DCT Transform</strong>
+            <p class="muted">Convert each motion channel into the frequency domain.</p>
+          </div>
+          <div class="step">
+            <div class="step-index">3</div>
+            <strong>Estimate SNR</strong>
+            <p class="muted">Use high-frequency energy ratio to measure prediction noisiness.</p>
+          </div>
+          <div class="step">
+            <div class="step-index">4</div>
+            <strong>Adaptive Kalman</strong>
+            <p class="muted">Refine high-frequency coefficients with dynamically adjusted Q and R.</p>
+          </div>
+          <div class="step">
+            <div class="step-index">5</div>
+            <strong>IDCT Reconstruction</strong>
+            <p class="muted">Recover smoother and more faithful motion sequences in the time domain.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results">
+      <div class="container">
+        <h2 class="section-title">Results</h2>
+        <p class="section-desc">
+          Use tabs to organize qualitative examples by action type. Each pane can contain a sequence figure, a trajectory plot, or an animated GIF.
+        </p>
+
+        <div class="panel">
+          <div class="result-tabs">
+            <button class="result-tab active" data-tab="boxing">Boxing</button>
+            <button class="result-tab" data-tab="walking">Walking</button>
+            <button class="result-tab" data-tab="jogging">Jogging</button>
+            <button class="result-tab" data-tab="gesturing">Gesturing</button>
+          </div>
+
+          <div class="result-pane active" id="boxing">
+            <div class="grid-2">
+              <div>
+                <div class="figure-box">Replace with Boxing qualitative result</div>
+                <div class="figure-caption">Sequence-level comparison: baseline vs KHMP vs ground truth.</div>
+              </div>
+              <div>
+                <div class="figure-box">Replace with Boxing trajectory plot</div>
+                <div class="figure-caption">Trajectory refinement highlights reduced jitter and improved temporal coherence.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="result-pane" id="walking">
+            <div class="grid-2">
+              <div>
+                <div class="figure-box">Replace with Walking qualitative result</div>
+                <div class="figure-caption">Natural lower-limb motion and more stable joint evolution.</div>
+              </div>
+              <div>
+                <div class="figure-box">Replace with Walking trajectory plot</div>
+                <div class="figure-caption">Better alignment with ground-truth temporal trends.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="result-pane" id="jogging">
+            <div class="grid-2">
+              <div>
+                <div class="figure-box">Replace with Jogging qualitative result</div>
+                <div class="figure-caption">Improved dynamic consistency while preserving motion details.</div>
+              </div>
+              <div>
+                <div class="figure-box">Replace with Jogging trajectory plot</div>
+                <div class="figure-caption">Suppresses oscillatory artifacts in challenging motion segments.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="result-pane" id="gesturing">
+            <div class="grid-2">
+              <div>
+                <div class="figure-box">Replace with Gesturing qualitative result</div>
+                <div class="figure-caption">Cleaner upper-body motion and more plausible articulation.</div>
+              </div>
+              <div>
+                <div class="figure-box">Replace with Gesturing trajectory plot</div>
+                <div class="figure-caption">Refinement is especially helpful in high-frequency hand and arm motion.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top: 20px;">
+          <h3 style="margin-top:0;">Quantitative Comparison</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>Dataset</th>
+                <th>ADE ↓</th>
+                <th>FDE ↓</th>
+                <th>MMADE ↓</th>
+                <th>MMFDE ↓</th>
+                <th>APD ↑</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Baseline*</td>
+                <td>HumanEva-I</td>
+                <td>0.196</td>
+                <td>0.211</td>
+                <td>0.314</td>
+                <td>0.303</td>
+                <td>6.516</td>
+              </tr>
+              <tr class="highlight-row">
+                <td>KHMP</td>
+                <td>HumanEva-I</td>
+                <td>0.188</td>
+                <td>0.204</td>
+                <td>0.301</td>
+                <td>0.291</td>
+                <td>7.481</td>
+              </tr>
+              <tr>
+                <td>Baseline*</td>
+                <td>Human3.6M</td>
+                <td>0.357</td>
+                <td>0.445</td>
+                <td>0.438</td>
+                <td>0.470</td>
+                <td>8.217</td>
+              </tr>
+              <tr class="highlight-row">
+                <td>KHMP</td>
+                <td>Human3.6M</td>
+                <td>0.349</td>
+                <td>0.441</td>
+                <td>0.436</td>
+                <td>0.468</td>
+                <td>9.235</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="figure-caption">
+            Replace, expand, or simplify this table depending on the final camera-ready version and your preferred set of baselines.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="analysis">
+      <div class="container">
+        <h2 class="section-title">Analysis and Ablations</h2>
+        <p class="section-desc">
+          This section is useful for showing that KHMP is not just a smoothing trick. A clean website usually benefits from one analysis row and one ablation row.
+        </p>
+        <div class="three-col">
+          <div class="card">
+            <h3>Adaptive vs Fixed Kalman</h3>
+            <p class="muted">Show that adaptive parameterization provides stronger and more consistent gains than a fixed filter.</p>
+          </div>
+          <div class="card">
+            <h3>Effect of Physical Constraints</h3>
+            <p class="muted">Highlight the contributions of temporal smoothness and joint-angle constraints during training.</p>
+          </div>
+          <div class="card">
+            <h3>Jitter Reduction</h3>
+            <p class="muted">Add a simple bar plot or radar plot summarizing average jitter suppression across key joints.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="video">
+      <div class="container">
+        <h2 class="section-title">Video Demonstrations</h2>
+        <p class="section-desc">
+          Replace the placeholders below with MP4 demos or looping GIF-style videos. This section is especially effective for showing motion smoothness improvements.
+        </p>
+        <div class="video-grid">
+          <div class="panel video-card">
+            <video controls poster="assets/video_cover_1.png">
+              <source src="assets/demo_boxing.mp4" type="video/mp4" />
+            </video>
+            <div class="figure-caption">Demo 1: baseline vs KHMP on a high-motion example.</div>
+          </div>
+          <div class="panel video-card">
+            <video controls poster="assets/video_cover_2.png">
+              <source src="assets/demo_walking.mp4" type="video/mp4" />
+            </video>
+            <div class="figure-caption">Demo 2: smoother trajectories and more plausible articulations.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="bibtex">
+      <div class="container">
+        <h2 class="section-title">BibTeX</h2>
+        <div class="panel">
+          <pre>@inproceedings{wu2026khmp,
+  title     = {KHMP: Frequency-Domain Kalman Refinement for High-Fidelity Human Motion Prediction},
+  author    = {Wenhan Wu and Ce Zheng and Zihao Yang and Chen Chen and Srijan Das and Aidong Lu},
+  booktitle = {European Conference on Computer Vision (ECCV)},
+  year      = {2026}
+}</pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="panel footer-card">
+        <div>
+          Template designed for KHMP project-page presentation.
+        </div>
+        <div>
+          © 2026 Wenhan Wu and collaborators.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const tabs = document.querySelectorAll('.result-tab');
+    const panes = document.querySelectorAll('.result-pane');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach((t) => t.classList.remove('active'));
+        panes.forEach((p) => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
