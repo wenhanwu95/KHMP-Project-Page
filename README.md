@@ -21,14 +21,6 @@
 
 </div>
 
----
-
-## Overview
-
-**KHMP** is a high-fidelity stochastic human motion prediction framework that combines physics-informed training with adaptive Kalman refinement in the DCT frequency domain. It is designed to suppress high-frequency jitter while preserving natural motion details, producing smoother, more realistic, and physically plausible future motion sequences.
-
----
-
 ## Abstract
 
 Stochastic human motion prediction aims to generate diverse and plausible future motions from observed sequences. Despite recent progress in generative modeling, existing methods often suffer from high-frequency jitter, temporal discontinuities, and physically implausible poses. We propose **KHMP**, a novel framework for high-fidelity human motion prediction that applies an adaptive Kalman filter in the DCT domain to refine predicted motion sequences. By treating high-frequency DCT coefficients as a structured noisy signal, KHMP recursively suppresses jitter while preserving motion details. In addition, the framework incorporates training-time physical constraints, including temporal smoothness and joint angle limits, to enforce biomechanical plausibility. Experiments on Human3.6M and HumanEva-I demonstrate that KHMP achieves strong quantitative performance while producing smoother and more realistic motions.
