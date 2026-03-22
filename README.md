@@ -3,21 +3,20 @@
 # KHMP: Frequency-Domain Kalman Refinement for High-Fidelity Human Motion Prediction
 
 <p align="center">
-  <a href="https://arxiv.org/abs/xxxx.xxxxx">Paper</a>
+  <a href="https://arxiv.org/abs/xxxx.xxxxx">arXiv</a>
   &nbsp;|&nbsp;
-  <a href="https://github.com/your-repo">Code</a>
-  &nbsp;|&nbsp;
-  <a href="./">Project Page</a>
-  &nbsp;|&nbsp;
-  <a href="#citation">BibTeX</a>
+  <a href="https://github.com/your-repo">GitHub</a>
 </p>
 
 <p align="center">
-  <b>Wenhan Wu</b>, Zhishuai Guo, Chen Chen, Srijan Das, Hongfei Xue, Pu Wang, Aidong Lu
+  <b>Wenhan Wu</b><sup>1,2</sup>, Zhishuai Guo<sup>3</sup>, Chen Chen<sup>4</sup>, Srijan Das<sup>2</sup>, Hongfei Xue<sup>2</sup>, Pu Wang<sup>2</sup>, Aidong Lu<sup>2</sup>
 </p>
 
 <p align="center">
-  Yunnan University &nbsp;|&nbsp; UNC Charlotte &nbsp;|&nbsp; Northern Illinois University &nbsp;|&nbsp; University of Central Florida
+  <sup>1</sup>School of Engineering, Yunnan University, Kunming, Yunnan, China<br>
+  <sup>2</sup>Department of Computer Science, University of North Carolina at Charlotte, Charlotte, NC, USA<br>
+  <sup>3</sup>Department of Computer Science, Northern Illinois University, DeKalb, IL, USA<br>
+  <sup>4</sup>Institute of Artificial Intelligence, University of Central Florida, Orlando, FL, USA
 </p>
 
 </div>
@@ -129,7 +128,7 @@ KHMP consistently produces smoother temporal evolution, more stable body articul
 
 ## Quantitative Comparison
 
-The following table reproduces the main quantitative comparison in the paper.
+The following table reproduces the main quantitative comparison in the paper. Best results are highlighted in **bold** in each column.
 
 <div align="center">
 
@@ -275,7 +274,7 @@ The following table reproduces the main quantitative comparison in the paper.
       <td>0.241</td>
       <td>0.328</td>
       <td>0.321</td>
-      <td>15.884</td>
+      <td><b>15.884</b></td>
       <td>0.358</td>
       <td>0.445</td>
       <td>0.442</td>
@@ -360,7 +359,7 @@ The following table reproduces the main quantitative comparison in the paper.
       <td>-</td>
       <td>-</td>
       <td>7.249</td>
-      <td>0.344</td>
+      <td><b>0.344</b></td>
       <td>0.450</td>
       <td>0.487</td>
       <td>0.512</td>
@@ -410,16 +409,16 @@ The following table reproduces the main quantitative comparison in the paper.
     <tr>
       <td><b>KHMP (Ours)</b></td>
       <td>–</td>
-      <td>7.481</td>
-      <td>0.188</td>
-      <td>0.204</td>
-      <td>0.301</td>
-      <td>0.291</td>
+      <td><b>7.481</b></td>
+      <td><b>0.188</b></td>
+      <td><b>0.204</b></td>
+      <td><b>0.301</b></td>
+      <td><b>0.291</b></td>
       <td>9.235</td>
       <td>0.349</td>
-      <td>0.441</td>
-      <td>0.436</td>
-      <td>0.468</td>
+      <td><b>0.441</b></td>
+      <td><b>0.436</b></td>
+      <td><b>0.468</b></td>
     </tr>
   </tbody>
 </table>
@@ -434,6 +433,4 @@ The following table reproduces the main quantitative comparison in the paper.
 - Physics-informed human motion prediction
 - Reduced temporal jitter
 - Improved physical plausibility
-- Strong performance on HumanEva-I and Human3.6M
-
----
+- Strong performance
