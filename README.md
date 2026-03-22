@@ -437,13 +437,3 @@ The following table reproduces the main quantitative comparison in the paper.
 - Strong performance on HumanEva-I and Human3.6M
 
 ---
-
-## Citation
-
-```bibtex
-@inproceedings{wu2026khmp,
-  title     = {KHMP: Frequency-Domain Kalman Refinement for High-Fidelity Human Motion Prediction},
-  author    = {Wenhan Wu and Zhishuai Guo and Chen Chen and Srijan Das and Hongfei Xue and Pu Wang and Aidong Lu},
-  booktitle = {European Conference on Computer Vision (ECCV)},
-  year      = {2026}
-}
