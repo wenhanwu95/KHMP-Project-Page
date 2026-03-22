@@ -156,7 +156,7 @@ The following table reproduces the main quantitative comparison in the paper.
   </thead>
   <tbody>
     <tr>
-      <td>ERD [8]</td>
+      <td>ERD</td>
       <td>ICCV 2015</td>
       <td>0</td>
       <td>0.382</td>
@@ -170,7 +170,7 @@ The following table reproduces the main quantitative comparison in the paper.
       <td>0.995</td>
     </tr>
     <tr>
-      <td>DeLiGAN [9]</td>
+      <td>DeLiGAN</td>
       <td>CVPR 2017</td>
       <td>2.177</td>
       <td>0.306</td>
@@ -184,7 +184,7 @@ The following table reproduces the main quantitative comparison in the paper.
       <td>0.545</td>
     </tr>
     <tr>
-      <td>BoM [3]</td>
+      <td>BoM</td>
       <td>CVPR 2018</td>
       <td>2.846</td>
       <td>0.271</td>
@@ -198,7 +198,7 @@ The following table reproduces the main quantitative comparison in the paper.
       <td>0.544</td>
     </tr>
     <tr>
-      <td>DLow [34]</td>
+      <td>DLow</td>
       <td>ECCV 2020</td>
       <td>4.855</td>
       <td>0.251</td>
@@ -212,7 +212,7 @@ The following table reproduces the main quantitative comparison in the paper.
       <td>0.531</td>
     </tr>
     <tr>
-      <td>DSF [33]</td>
+      <td>DSF</td>
       <td>ICLR 2020</td>
       <td>4.538</td>
       <td>0.273</td>
@@ -226,7 +226,7 @@ The following table reproduces the main quantitative comparison in the paper.
       <td>0.599</td>
     </tr>
     <tr>
-      <td>GSPS [21]</td>
+      <td>GSPS</td>
       <td>ICCV 2021</td>
       <td>5.825</td>
       <td>0.233</td>
@@ -240,7 +240,7 @@ The following table reproduces the main quantitative comparison in the paper.
       <td>0.525</td>
     </tr>
     <tr>
-      <td>MOJO [35]</td>
+      <td>MOJO</td>
       <td>CVPR 2021</td>
       <td>4.181</td>
       <td>0.234</td>
@@ -254,7 +254,7 @@ The following table reproduces the main quantitative comparison in the paper.
       <td>0.538</td>
     </tr>
     <tr>
-      <td>DivSamp [6]</td>
+      <td>DivSamp</td>
       <td>ACM MM 2022</td>
       <td>6.109</td>
       <td>0.220</td>
@@ -268,7 +268,7 @@ The following table reproduces the main quantitative comparison in the paper.
       <td>0.516</td>
     </tr>
     <tr>
-      <td>STARS [31]</td>
+      <td>STARS</td>
       <td>ECCV 2022</td>
       <td>6.031</td>
       <td>0.217</td>
@@ -282,7 +282,7 @@ The following table reproduces the main quantitative comparison in the paper.
       <td>0.471</td>
     </tr>
     <tr>
-      <td>MotionDiff [28]</td>
+      <td>MotionDiff</td>
       <td>AAAI 2023</td>
       <td>5.931</td>
       <td>0.232</td>
@@ -296,7 +296,7 @@ The following table reproduces the main quantitative comparison in the paper.
       <td>0.536</td>
     </tr>
     <tr>
-      <td>Belfusion [2]</td>
+      <td>Belfusion</td>
       <td>ICCV 2023</td>
       <td>-</td>
       <td>-</td>
@@ -310,7 +310,7 @@ The following table reproduces the main quantitative comparison in the paper.
       <td>0.507</td>
     </tr>
     <tr>
-      <td>HumanMAC [4]</td>
+      <td>HumanMAC</td>
       <td>ICCV 2023</td>
       <td>6.554</td>
       <td>0.209</td>
@@ -324,7 +324,7 @@ The following table reproduces the main quantitative comparison in the paper.
       <td>0.545</td>
     </tr>
     <tr>
-      <td>TransFusion [26]</td>
+      <td>TransFusion</td>
       <td>RA-L 2024</td>
       <td>1.031</td>
       <td>0.204</td>
@@ -338,7 +338,7 @@ The following table reproduces the main quantitative comparison in the paper.
       <td>0.539</td>
     </tr>
     <tr>
-      <td>CoMotion [24]</td>
+      <td>CoMotion</td>
       <td>ECCV 2024</td>
       <td>-</td>
       <td>-</td>
@@ -352,7 +352,7 @@ The following table reproduces the main quantitative comparison in the paper.
       <td>0.506</td>
     </tr>
     <tr>
-      <td>SkeletonDiff [5]</td>
+      <td>SkeletonDiff</td>
       <td>CVPR 2025</td>
       <td>-</td>
       <td>-</td>
@@ -366,7 +366,7 @@ The following table reproduces the main quantitative comparison in the paper.
       <td>0.512</td>
     </tr>
     <tr>
-      <td>MotionMap [10]</td>
+      <td>MotionMap</td>
       <td>CVPR 2025</td>
       <td>-</td>
       <td>-</td>
@@ -380,7 +380,7 @@ The following table reproduces the main quantitative comparison in the paper.
       <td>0.532</td>
     </tr>
     <tr>
-      <td>SOGM [27]</td>
+      <td>SOGM</td>
       <td>DSP 2025</td>
       <td>6.761</td>
       <td>0.217</td>
@@ -409,17 +409,17 @@ The following table reproduces the main quantitative comparison in the paper.
     </tr>
     <tr>
       <td><b>KHMP (Ours)</b></td>
-      <td><b>–</b></td>
-      <td><b>7.481</b></td>
-      <td><b>0.188</b></td>
-      <td><b>0.204</b></td>
-      <td><b>0.301</b></td>
-      <td><b>0.291</b></td>
-      <td><b>9.235</b></td>
-      <td><b>0.349</b></td>
-      <td><b>0.441</b></td>
-      <td><b>0.436</b></td>
-      <td><b>0.468</b></td>
+      <td>–</td>
+      <td>7.481</td>
+      <td>0.188</td>
+      <td>0.204</td>
+      <td>0.301</td>
+      <td>0.291</td>
+      <td>9.235</td>
+      <td>0.349</td>
+      <td>0.441</td>
+      <td>0.436</td>
+      <td>0.468</td>
     </tr>
   </tbody>
 </table>
@@ -435,17 +435,6 @@ The following table reproduces the main quantitative comparison in the paper.
 - Reduced temporal jitter
 - Improved physical plausibility
 - Strong performance on HumanEva-I and Human3.6M
-
----
-
-## TODO
-
-- [ ] Upload final figure assets to `figs/`
-- [ ] Add paper link
-- [ ] Add code link
-- [ ] Add project page link
-- [ ] Add supplementary materials
-- [ ] Add demo videos or GIFs if needed
 
 ---
 
