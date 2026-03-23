@@ -5,7 +5,7 @@
 <p align="center">
   <a href="https://arxiv.org/abs/xxxx.xxxxx">arXiv</a>
   &nbsp;|&nbsp;
-  <a href="[https://github.com/your-repo](https://github.com/wenhanwu95/KHMP-Project-Page)">GitHub</a>
+  <a href="https://github.com/wenhanwu95/KHMP-Project-Page">GitHub</a>
 </p>
 
 <p align="center">
