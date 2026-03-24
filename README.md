@@ -2,17 +2,17 @@
 
 # KHMP: Frequency-Domain Kalman Refinement for High-Fidelity Human Motion Prediction
 
-<p align="center">
+<p>
   <a href="https://arxiv.org/abs/2603.21327">arXiv</a>
   &nbsp;|&nbsp;
   <a href="https://github.com/wenhanwu95/KHMP-Project-Page">GitHub</a>
 </p>
 
-<p align="center">
-  <b>Wenhan Wu</b><sup>1,2</sup>, Zhishuai Guo<sup>3</sup>, Chen Chen<sup>4</sup>, Srijan Das<sup>2</sup>, Hongfei Xue<sup>2</sup>, Pu Wang<sup>2</sup>, Aidong Lu<sup>2</sup>
+<p>
+  Wenhan Wu<sup>1,2</sup>, Zhishuai Guo<sup>3</sup>, Chen Chen<sup>4</sup>, Srijan Das<sup>2</sup>, Hongfei Xue<sup>2</sup>, Pu Wang<sup>2</sup>, Aidong Lu<sup>2</sup>
 </p>
 
-<p align="center">
+<p>
   <sup>1</sup>School of Engineering, Yunnan University, Kunming, Yunnan, China<br>
   <sup>2</sup>Department of Computer Science, University of North Carolina at Charlotte, Charlotte, NC, USA<br>
   <sup>3</sup>Department of Computer Science, Northern Illinois University, DeKalb, IL, USA<br>
@@ -23,9 +23,17 @@
 
 ## Abstract
 
-Stochastic human motion prediction aims to generate diverse, plausible futures from observed sequences. Despite advances in generative modeling, existing methods often produce predictions corrupted by high-frequency jitter and temporal discontinuities. To address these challenges, we introduce KHMP, a novel framework featuring an adaptiveKalman filter applied in the DCT domain to generate high-fidelity human motion predictions. By treating high-frequency DCT coefficients as a frequency-indexed noisy signal, the Kalman filter recursively suppresses noise while preserving motion details. Notably, its noise parameters are dynamically adjusted based on estimated Signal-to-Noise Ratio (SNR), enabling aggressive denoising for jittery predictions and conservative filtering for clean motions. This refinement is complemented by training-time physical constraints (temporal smoothness and joint angle limits) that encode biomechanical principles into the generative model. Together, these innovations establish a new paradigm integrating adaptive signal processing with physics-informed learning. Experiments on the Human3.6M and HumanEva-I datasets demonstrate that KHMP achieves state-of-the-art accuracy, effectively mitigating jitter artifacts to produce smooth and physically plausible motions.
+Stochastic human motion prediction aims to generate diverse, plausible futures from observed sequences. Despite advances in generative modeling, existing methods often produce predictions corrupted by high-frequency jitter and temporal discontinuities. To address these challenges, we introduce KHMP, a novel framework featuring an adaptive Kalman filter applied in the DCT domain to generate high-fidelity human motion predictions. By treating high-frequency DCT coefficients as a frequency-indexed noisy signal, the Kalman filter recursively suppresses noise while preserving motion details. Notably, its noise parameters are dynamically adjusted based on estimated Signal-to-Noise Ratio (SNR), enabling aggressive denoising for jittery predictions and conservative filtering for clean motions. This refinement is complemented by training-time physical constraints (temporal smoothness and joint angle limits) that encode biomechanical principles into the generative model. Together, these innovations establish a new paradigm integrating adaptive signal processing with physics-informed learning. Experiments on the Human3.6M and HumanEva-I datasets demonstrate that KHMP achieves state-of-the-art accuracy, effectively mitigating jitter artifacts to produce smooth and physically plausible motions.
 
----
+## Overview
+
+KHMP is built around two key innovations:
+
+1. **Adaptive frequency-domain Kalman refinement**  
+   KHMP applies an adaptive Kalman filter in the DCT domain to refine predicted motion sequences. By treating high-frequency coefficients as noisy signals and dynamically adjusting the filtering strength according to the estimated SNR, KHMP effectively suppresses jitter while preserving meaningful motion details.
+
+2. **Physics-informed training constraints**  
+   KHMP incorporates temporal smoothness and joint angle limit constraints during training to inject biomechanical priors into the motion generation process, leading to more stable and physically plausible predictions.
 
 ## Motivation
 
@@ -41,12 +49,10 @@ Existing stochastic human motion prediction models face two major challenges:
 
 KHMP addresses both issues with a unified framework that combines physical constraints during training and adaptive frequency-domain Kalman refinement during inference.
 
----
-
 ## Comparison illustrating motion prediction
 
 <p align="center">
-  <img src="figs/fig1.png" width="85%">
+  <img src="figs/fig1.png" width="76%">
 </p>
 
 <p align="center">
@@ -55,31 +61,26 @@ KHMP addresses both issues with a unified framework that combines physical const
 
 Previous stochastic prediction frameworks often generate predictions exhibiting physical implausibility and abrupt temporal transitions. KHMP produces more plausible and temporally smoother motion sequences.
 
----
-
 ## Overview of the proposed KHMP framework
 
 <p align="center">
-  <img src="figs/fig2.png" width="92%">
+  <img src="figs/fig2.png" width="82%">
 </p>
 
 <p align="center">
   <em>Overview of the proposed KHMP framework.</em>
 </p>
 
-The KHMP pipeline consists of three main stages:
+KHMP consists of two complementary components:
 
-### 1. Motion generation backbone
-A stochastic human motion prediction backbone first generates future 3D motion sequences.
-
-### 2. Physics-informed training
+### 1. Physics-informed training
 During training, KHMP introduces:
 - temporal smoothness constraints
 - joint angle limit constraints
 
 These constraints improve motion realism and reduce physically implausible predictions.
 
-### 3. Frequency-domain adaptive Kalman refinement
+### 2. Frequency-domain adaptive Kalman refinement
 During inference, KHMP:
 - transforms predicted motion into the DCT domain
 - separates low-frequency motion structure from high-frequency noisy components
@@ -88,12 +89,10 @@ During inference, KHMP:
 
 This design effectively suppresses jitter while preserving detailed motion patterns.
 
----
-
 ## Visual comparison of joint trajectories
 
 <p align="center">
-  <img src="figs/fig3.png" width="95%">
+  <img src="figs/fig3.png" width="84%">
 </p>
 
 <p align="center">
@@ -102,12 +101,10 @@ This design effectively suppresses jitter while preserving detailed motion patte
 
 KHMP significantly improves trajectory smoothness across different body parts. Compared with the baseline, the refined trajectories better follow the ground truth and exhibit substantially less high-frequency oscillation.
 
----
-
 ## Visual comparison highlighting KHMP’s enhanced prediction quality
 
 <p align="center">
-  <img src="figs/fig4.png" width="95%">
+  <img src="figs/fig4.png" width="84%">
 </p>
 
 <p align="center">
@@ -116,15 +113,13 @@ KHMP significantly improves trajectory smoothness across different body parts. C
 
 KHMP consistently produces smoother temporal evolution, more stable body articulation, fewer jitter artifacts, and more physically plausible pose transitions.
 
----
-
 ## Quantitative Comparison
 
-The following table reproduces the main quantitative comparison in the paper. Best results are highlighted in **bold** in each column.
+Best results are highlighted in **bold** in each column.
 
 <div align="center">
 
-<table>
+<table style="font-size:12px;">
   <thead>
     <tr>
       <th rowspan="2">Method</th>
@@ -417,12 +412,7 @@ The following table reproduces the main quantitative comparison in the paper. Be
 
 </div>
 
----
+## Updates
 
-## Key Features
-
-- Adaptive frequency-domain refinement
-- Physics-informed human motion prediction
-- Reduced temporal jitter
-- Improved physical plausibility
-- Strong performance
+- **2026.3.22:** the GitHub project page was created.
+- **2026.3.24:** the arXiv paper is online.
