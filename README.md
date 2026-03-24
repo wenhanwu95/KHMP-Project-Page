@@ -3,7 +3,7 @@
 # KHMP: Frequency-Domain Kalman Refinement for High-Fidelity Human Motion Prediction
 
 <p align="center">
-  <a href="https://arxiv.org/abs/xxxx.xxxxx">arXiv</a>
+  <a href="https://arxiv.org/abs/2603.21327">arXiv</a>
   &nbsp;|&nbsp;
   <a href="https://github.com/wenhanwu95/KHMP-Project-Page">GitHub</a>
 </p>
